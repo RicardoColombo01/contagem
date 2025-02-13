@@ -1,7 +1,7 @@
 // Função para calcular a contagem regressiva
 function updateCountdown() {
     // Data alvo: 13 de maio de 2025 às 00:00:00
-    const targetDate = new Date("2025-05-13T00:00:00");
+    const targetDate = new Date("2025-02-13T00:00:00");
 
     // Data atual
     const currentDate = new Date();
