@@ -1,99 +1,136 @@
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-family: Arial, sans-serif;
-    background-color: rgb(172, 172, 172);
-    color: black;
-    transition: background 0.3s, color 0.3s;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: rgb(172, 172, 172);
+  color: black;
+  transition: background 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+}
+
+.surpresa {
+  visibility: hidden;
+}
+
+#mudar {
+  background-color: rgb(54, 141, 255);
+  color: black;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  padding: 20px 30px;
+  font-size: 20px;
+  margin-top: 50px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  animation-duration: 2s;
+}
+
+#mudar:hover {
+  background-color: rgb(87, 138, 248);
+  transform: scale(1.2);
 }
 
 .container {
-    text-align: center;
-    padding: 20px;
+  text-align: center;
+  padding: 20px;
 }
 
 #countdown {
-    font-size: 3rem;
-    font-weight: bold;
-    transition: transform 0.3s ease, font-size 0.3s ease;
-    transition-duration: 0.6s;
+  font-size: 3rem;
+  font-weight: bold;
+  transition: transform 0.3s ease, font-size 0.3s ease;
+  transition-duration: 0.6s;
 }
 
 #date {
-    font-size: 1.5rem;
-    margin-top: 10px;  
-    transition-duration: 0.6s;
+  font-size: 1.5rem;
+  margin-top: 10px;
+  transition-duration: 0.6s;
 }
 
-h2{
-    font-size: 3rem;
-    font-family:Arial, Helvetica, sans-serif;
-    transition-duration: 0.6s;
+h2 {
+  font-size: 3rem;
+  font-family: Arial, Helvetica, sans-serif;
+  transition-duration: 0.6s;
 }
-h2:hover, #date:hover{
-    transform: scale(1.1); /* Aumenta 10% */
-    color: rgb(83, 83, 83);
+h2:hover,
+#date:hover {
+  transform: scale(1.1); /* Aumenta 10% */
+  color: rgb(83, 83, 83);
 }
 
 /* Animação fofa */
 .fofo {
-    animation: pulse 1.2s infinite alternate;
-    color: #fc46a1; /* Cor rosa fofa */
-    font-size: 4rem; /* Tamanho maior para dar um efeito chamativo */
+  animation: pulse 1.2s infinite alternate;
+  color: #f33795; /* Cor rosa fofa */
+  font-size: 4rem; /* Tamanho maior para dar um efeito chamativo */
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.1);
-    }
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
 
 /* Media Query para telas pequenas (celulares) */
 @media (max-width: 600px) {
-    body {
-        flex-direction: column;
-        justify-content: flex-start;
-    }
+  body {
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 
-    .container {
-        padding: 10px;
-        width: 100%;
-    }
+  .container {
+    padding: 10px;
+    width: 100%;
+  }
 
-    #countdown {
-        font-size: 2rem;
-        word-wrap: break-word; /* Para não quebrar a contagem em telas menores */
-    }
+  #countdown {
+    font-size: 2rem;
+    word-wrap: break-word; /* Para não quebrar a contagem em telas menores */
+  }
 
-    #date {
-        font-size: 1.2rem;
-    }
+  #date {
+    font-size: 1.2rem;
+  }
 
-    .fofo {
-        font-size: 3.5rem; /* Reduzindo o tamanho da animação para telas pequenas */
-    }
+  .fofo {
+    font-size: 3.5rem; /* Reduzindo o tamanho da animação para telas pequenas */
+  }
 
-    h2{
-        font-size: 2.2rem;
-    }
+  h2 {
+    font-size: 2.2rem;
+  }
 }
 
 /* Media Query para telas grandes (desktops) */
 @media (min-width: 1024px) {
-    #countdown {
-        font-size: 4rem;
-    }
+  #countdown {
+    font-size: 4rem;
+  }
 
-    #date {
-        font-size: 1.7rem;
-    }
+  #date {
+    font-size: 1.7rem;
+  }
+}
 
-       }
-
+#botaoMusica {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #fff;
+  color: #ff4081;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}

@@ -13,8 +13,33 @@ function updateCountdown() {
     if (timeDifference <= 0) {
         document.getElementById("texto").style.visibility = "hidden";
         document.getElementById("countdown").innerText = "Mais um ano de nós Eu te amo muitoooo vidinha❤️🤞🏼!";
-        document.body.style.backgroundColor = "rgb(218, 36, 36)"; // Cor rosa (fundo fofo)
+        document.body.style.backgroundColor = "rgb(116, 176, 255)"; // Cor rosa (fundo fofo)
         document.getElementById("countdown").classList.add("fofo");
+        document.getElementById("date").style.visibility = "hidden";
+        document.getElementById("mudar").style.visibility = "visible";
+        
+window.onload = function() {
+    confetti({
+        particleCount: 500,
+        spread: 360,
+        startVelocity: 40,
+        origin: { x: 0.5, y: 0.5 }
+      });
+      confetti({
+        particleCount: 400,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 }
+      });
+      confetti({
+        particleCount: 400,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1}
+      });
+  };
+
+
         return;
     }
 
@@ -41,3 +66,34 @@ function updateCountdown() {
 // Atualiza a contagem regressiva a cada segundo
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
+let tocando = false;
+
+function toggleMusica() {
+  const audio = document.getElementById('audio');
+  const botao = document.getElementById('botaoMusica');
+
+  if (!tocando) {
+    audio.play();
+    botao.textContent = "⏸️ Pausar Música";
+  } else {
+    audio.pause();
+    botao.textContent = "🎵 Tocar Música";
+  }
+
+  tocando = !tocando;
+}
+
+// Tocar música após o primeiro clique em qualquer lugar
+window.addEventListener('DOMContentLoaded', function primeiraInteracao() {
+    const audio = document.getElementById('audio');
+    if (!tocando) {
+      audio.play();
+      document.getElementById('botaoMusica').textContent = "⏸️ Pausar Música";
+      tocando = true;
+    }
+    // Remove o listener após o primeiro clique
+    window.removeEventListener('DOMContentLoaded', primeiraInteracao);
+  });
+
+  
